@@ -1,6 +1,7 @@
-import java.util.*;
-import java.io.*;
-import java.lang.Math;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class EditDistance {
 
@@ -52,7 +53,7 @@ public class EditDistance {
 				sbY.insert(j, '-');
 				i--;
 			}
-			else {	//Move diagnally
+			else {	//Move diagonally
 				i--;
 				j--;
 			}
@@ -98,7 +99,6 @@ public class EditDistance {
          System.out.println("File not found!");
          return;
       }
-
       x = fileIn.nextLine();
       y = fileIn.nextLine();
       EditDistance();
@@ -109,4 +109,12 @@ public class EditDistance {
       if(sc.next().charAt(0) == 'y')
       	printAlign();
 	}
+
+    public int getEditDistance(String x, String y){
+        this.x =x;
+        this.y=y;
+        EditDistance();
+        TraceBack();
+        return ed;
+    }
 }
